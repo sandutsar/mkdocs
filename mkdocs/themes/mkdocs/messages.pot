@@ -1,45 +1,51 @@
 # Translations template for MkDocs.
-# Copyright (C) 2021 MkDocs
+# Copyright (C) 2024 MkDocs
 # This file is distributed under the same license as the MkDocs project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MkDocs 1.2\n"
+"Project-Id-Version: MkDocs 1.5.3\n"
 "Report-Msgid-Bugs-To: https://github.com/mkdocs/mkdocs/issues\n"
-"POT-Creation-Date: 2021-04-08 22:44+0200\n"
+"POT-Creation-Date: 2024-04-18 21:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <@nickname or @email>\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.0\n"
+"Generated-By: Babel 2.14.0\n"
 
 #: mkdocs/themes/mkdocs/404.html:8
 msgid "Page not found"
 msgstr ""
 
-#: mkdocs/themes/mkdocs/base.html:107
+#: mkdocs/themes/mkdocs/base.html:117
 #: mkdocs/themes/mkdocs/keyboard-modal.html:31
 #: mkdocs/themes/mkdocs/search-modal.html:5
 msgid "Search"
 msgstr ""
 
-#: mkdocs/themes/mkdocs/base.html:117
+#: mkdocs/themes/mkdocs/base.html:127
 msgid "Previous"
 msgstr ""
 
-#: mkdocs/themes/mkdocs/base.html:122
+#: mkdocs/themes/mkdocs/base.html:132
 msgid "Next"
 msgstr ""
 
-#: mkdocs/themes/mkdocs/base.html:133 mkdocs/themes/mkdocs/base.html:135
-#: mkdocs/themes/mkdocs/base.html:137 mkdocs/themes/mkdocs/base.html:139
+#: mkdocs/themes/mkdocs/base.html:143 mkdocs/themes/mkdocs/base.html:145
+#: mkdocs/themes/mkdocs/base.html:147 mkdocs/themes/mkdocs/base.html:149
 #, python-format
 msgid "Edit on %(repo_name)s"
 msgstr ""
 
-#: mkdocs/themes/mkdocs/base.html:179
+#: mkdocs/themes/mkdocs/base.html:151
+msgid "Edit"
+msgstr ""
+
+#: mkdocs/themes/mkdocs/base.html:225
 #, python-format
 msgid "Documentation built with %(mkdocs_link)s."
 msgstr ""

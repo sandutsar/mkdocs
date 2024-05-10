@@ -32,14 +32,17 @@ MultiMarkdown Meta-Data
 Extracts, parses and transforms MultiMarkdown style data from documents.
 
 """
-
+from __future__ import annotations
 
 import re
+from typing import Any
+
 import yaml
+
 try:
     from yaml import CSafeLoader as SafeLoader
 except ImportError:  # pragma: no cover
-    from yaml import SafeLoader
+    from yaml import SafeLoader  # type: ignore
 
 #####################################################################
 # Data Parser                                                       #
@@ -50,7 +53,7 @@ META_RE = re.compile(r'^[ ]{0,3}(?P<key>[A-Za-z0-9_-]+):\s*(?P<value>.*)')
 META_MORE_RE = re.compile(r'^([ ]{4}|\t)(\s*)(?P<value>.*)')
 
 
-def get_data(doc):
+def get_data(doc: str) -> tuple[str, dict[str, Any]]:
     """
     Extract meta-data from a text document.
 
@@ -59,19 +62,18 @@ def get_data(doc):
     data = {}
 
     # First try YAML
-    m = YAML_RE.match(doc)
-    if m:
+    if m := YAML_RE.match(doc):
         try:
             data = yaml.load(m.group(1), SafeLoader)
             if isinstance(data, dict):
-                doc = doc[m.end():].lstrip('\n')
+                doc = doc[m.end() :].lstrip('\n')
             else:
-                data = {}
+                data = {}  # type: ignore[unreachable]
         except Exception:
             pass
         return doc, data
 
-    # No YAML deliminators. Try MultiMarkdown style
+    # No YAML delimiters. Try MultiMarkdown style
     lines = doc.replace('\r\n', '\n').replace('\r', '\n').split('\n')
 
     key = None
@@ -80,8 +82,7 @@ def get_data(doc):
 
         if line.strip() == '':
             break  # blank line - done
-        m1 = META_RE.match(line)
-        if m1:
+        if m1 := META_RE.match(line):
             key = m1.group('key').lower().strip()
             value = m1.group('value').strip()
             if key in data:
